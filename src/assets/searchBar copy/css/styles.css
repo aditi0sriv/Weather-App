@@ -1,0 +1,18 @@
+body {
+  margin: 2rem;
+}
+
+.copy {
+  display: flex;
+  justify-content: space-between;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.copy .tagline p {
+  font-family: sans-serif;
+  font-size: 3rem;
+}
+.copy .tagline p #tagline {
+  font-style: italic;
+  font-size: 1.7rem;
+}/*# sourceMappingURL=styles.css.map */

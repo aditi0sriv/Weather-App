@@ -1,0 +1,44 @@
+{
+    "coord": {
+        "lon": 75.6833,
+        "lat": 29.45
+    },
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 289.66,
+        "feels_like": 287.84,
+        "temp_min": 289.66,
+        "temp_max": 289.66,
+        "pressure": 1015,
+        "humidity": 18,
+        "sea_level": 1015,
+        "grnd_level": 990
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 3.84,
+        "deg": 311,
+        "gust": 4.46
+    },
+    "clouds": {
+        "all": 0
+    },
+    "dt": 1738846370,
+    "sys": {
+        "country": "IN",
+        "sunrise": 1738806221,
+        "sunset": 1738845541
+    },
+    "timezone": 19800,
+    "id": 1270926,
+    "name": "Gorakhpur",
+    "cod": 200
+}

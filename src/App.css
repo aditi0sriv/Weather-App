@@ -1,0 +1,12 @@
+.weatherApp .search {
+  display: flex;
+}
+.weatherApp .search input {
+  padding: 0.5rem;
+  border: none;
+  border-bottom: solid;
+}
+.weatherApp .search button {
+  background: none;
+  border: none;
+}/*# sourceMappingURL=App.css.map */
