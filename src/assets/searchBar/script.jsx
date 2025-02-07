@@ -1,18 +1,35 @@
 import React from "react";
 import './css/styles.css'
 
-function SearchBar({ city, setCity, fetchWeather }) {
+const SearchBar = ({ city, setCity, liveSearch, filteredCities, setFilteredCities, fetchWeather }) => {
+  const selectedCity = (selected) => {
+    setCity(selected);
+    fetchWeather();
+    setFilteredCities([]);
+  };
+
   return (
     <div className="container">
       <input
         type="text"
-        placeholder="Search city..."
         value={city}
-        onChange={(e) => setCity(e.target.value)}
+        onChange={(e) => liveSearch(e.target.value)}
+        placeholder="Enter city name..."
+        className="search-input"
       />
-      {/* <button onClick={fetchWeather}>Get Weather</button> */}
+      
+      {/* showing suggestions  */}
+      {filteredCities.length > 0 && (
+        <ul className="suggestions-list">
+          {filteredCities.map((suggestion, index) => (
+            <li key={index} onClick={() => selectedCity(suggestion)}>
+              {suggestion}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
-}
+};
 
 export default SearchBar;

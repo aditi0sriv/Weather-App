@@ -1,5 +1,29 @@
+.container {
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
 .container button {
   border-radius: 0.5rem;
   background-color: rgb(219, 219, 219);
   padding: 0.5rem;
+}
+.container .suggestions-list {
+  z-index: 10;
+  border: solid;
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: rgb(217, 217, 217);
+  border: 1px solid #ccc;
+  border-top: none;
+  list-style: none;
+  padding: 0.4rem;
+  margin-top: 2rem;
+  z-index: 10;
+  border-radius: 0 0 5px 5px;
+  max-height: 3.7rem;
 }/*# sourceMappingURL=styles.css.map */

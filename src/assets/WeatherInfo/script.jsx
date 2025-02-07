@@ -1,5 +1,5 @@
 import React from "react";
-import { Sun, CloudRain, Cloud } from "lucide-react"; // Import Lucide Icons
+import { Sun, CloudRain, Cloud } from "lucide-react"; // icons
 import "./css/styles.css";
 
 function WeatherInfo({ weather }) {
@@ -7,30 +7,39 @@ function WeatherInfo({ weather }) {
     month: "long",
     day: "numeric",
     year: "numeric",
-  });
+  }); // formatting date --> ex: February 5th, 2025
 
-  // Function to select the right icon based on weather conditions
+  // selecting weather icon based on the weather received
   const getWeatherIcon = (condition) => {
-    if (condition.includes("rain")) return <CloudRain className="weather-icon" />;
-    if (condition.includes("cloud")) return <Cloud className="weather-icon" />;
+    if (condition.includes("rain")) 
+    return <CloudRain className="weather-icon" />;
+
+    if (condition.includes("cloud")) 
+    return <Cloud className="weather-icon" />;
+
     return <Sun className="weather-icon" />;
   };
 
   return (
     <div className="weather-info">
-      {/* Weather Icon & Location */}
       <div className="weather-header">
+        {/* weather icon  */}
         {getWeatherIcon(weather.weather[0].description.toLowerCase())} 
 
+        {/* displaying city name and current date */}
         <div className="city-date">
           <h2 className="city">{weather.name}</h2>
           <p className="date">{date}</p>
         </div>
       </div>
 
-      {/* Temperature & Description */}
+      {/* displaying temperature and description of temperature */}
       <div className="temperature">
-        <h1>{Math.round(weather.main.temp)}°C</h1>
+
+        {/* rounding up numbers  */}
+        <h1>{Math.round(weather.main.temp)}°C</h1> 
+
+        {/* weather description */}
         <p className="description">{weather.weather[0].description}</p>
       </div>
     </div>
