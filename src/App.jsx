@@ -98,10 +98,7 @@ function App() {
             filteredCities={filteredCities}
             setFilteredCities={setFilteredCities}
             fetchWeather={fetchWeather}
-          // onClick={() => {
-          //   fetchWeather();
-          //   setFilteredCities([]);
-          // }}
+
           />
           <button onClick={() => {
             fetchWeather(city);
