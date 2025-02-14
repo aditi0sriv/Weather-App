@@ -19,7 +19,7 @@
 }
 .weather-info .temperature {
   border-radius: 1.5rem;
-  background-color: #eae8e8;
+  background-color: #c7c7c7;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,9 +28,24 @@
 .weather-info .temperature h1 {
   margin: 0;
   margin-top: 2rem;
-  font-size: 4.5rem; /* Adjust size as needed */
+  font-size: 4.5rem;
+  /* Adjust size as needed */
 }
 .weather-info .temperature .description {
-  font-size: 1.2rem; /* Adjust description size */
+  font-size: 1.2rem;
+  /* Adjust description size */
+  color: #212121;
+}
+
+.weather-info.dark {
+  color: #f0f0f0;
+}
+.weather-info.dark .weather-header .city-date .city {
+  color: #ffffff;
+}
+.weather-info.dark .temperature {
+  background-color: #c3c3c3;
+}
+.weather-info.dark .temperature h1 {
   color: #212121;
 }/*# sourceMappingURL=styles.css.map */

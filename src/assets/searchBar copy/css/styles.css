@@ -1,18 +1,35 @@
 body {
-  margin: 2rem;
+  margin: 1rem;
+}
+body.dark {
+  color: white;
+  background-color: black;
 }
 
 .copy {
   display: flex;
   justify-content: space-between;
-  width: -moz-fit-content;
-  width: fit-content;
 }
-.copy .tagline p {
-  font-family: sans-serif;
+.copy .tagline {
   font-size: 3rem;
+  padding: 1rem;
 }
-.copy .tagline p #tagline {
+.copy .tagline #tagline {
   font-style: italic;
-  font-size: 1.7rem;
+  font-size: 2rem;
+}
+.copy .theme-toggle {
+  margin-top: 5rem;
+  margin-right: 0.5rem;
+  width: 2.7rem;
+  height: 2.7rem;
+  background: none;
+  border: none;
+}
+
+.copy .dark {
+  border: none;
+}
+.copy .dark .theme-toggle .Moon, .copy .dark .theme-toggle .Sun {
+  color: white;
 }/*# sourceMappingURL=styles.css.map */

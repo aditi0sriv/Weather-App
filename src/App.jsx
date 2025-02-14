@@ -4,6 +4,9 @@ import './App.css';
 import SearchBar from './assets/searchBar/script.jsx';
 import WelcomeMessage from './assets/searchBar copy/script.jsx';
 import WeatherInfo from './assets/WeatherInfo/script.jsx';
+import { ThemeProvider } from './assets/themeProvider/theme.jsx';
+import { ThemeContext } from './assets/themeProvider/theme.jsx';
+import { useContext } from 'react';
 import axios from 'axios';
 
 import { Search } from 'lucide-react'; // importing 'search' icon
@@ -21,6 +24,7 @@ console.log("Alphabetically city names: ", citySorted)
 
 function App() {
   // state variables 
+  // const { theme, toggletheme } = useContext(ThemeContext);
 
   // city = default use state, setCity = any city entered by the user, the state gets 
   // changed to whatever the user enters
@@ -44,7 +48,7 @@ function App() {
 
   // fetching weather using axios and openweathermap api
   const fetchWeather = async (cityName) => {
-    if(!cityName) return;
+    if (!cityName) return;
 
     try {
       const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`);
@@ -79,33 +83,42 @@ function App() {
     setFilteredCities(matches);
   }
 
-  return (
-    <div className="weatherApp">
-      <WelcomeMessage />
+  const theme = localStorage.getItem('theme');
 
-      <div className='search'>
-        <SearchBar city={city}
-          setCity={setCity}
-          liveSearch={liveSearch}
-          filteredCities={filteredCities}
-          setFilteredCities={setFilteredCities}
-          fetchWeather={fetchWeather}
+  return (
+    // wrapping the entire app within themeProvider making it accessible to the entire app
+    <ThemeProvider>
+      <div className="weatherApp">
+        <WelcomeMessage />
+
+        <div className='search'>
+          <SearchBar city={city}
+            setCity={setCity}
+            liveSearch={liveSearch}
+            filteredCities={filteredCities}
+            setFilteredCities={setFilteredCities}
+            fetchWeather={fetchWeather}
           // onClick={() => {
           //   fetchWeather();
           //   setFilteredCities([]);
           // }}
-        />
-        <button onClick={() => {
-          fetchWeather(city);
-          setFilteredCities([]); // clearing suggestion's list after selecting a city
-        }}>
-          <Search size={20} /> {/* Adjust size as needed */}
-        </button>
-      </div>
+          />
+          <button onClick={() => {
+            fetchWeather(city);
+            setFilteredCities([]); // clearing suggestion's list after selecting a city
+          }}>
 
-      {isFetched && error && <p className="error-message">{error}</p>}
-      {isFetched && weather && <WeatherInfo weather={weather} />}
-    </div>
+            <Search size={20} color={theme.theme === "dark" ? "white" : "black"} />
+
+            {/* <Search size={20} /> */}
+            {/* <Search size={20} /> Adjust size as needed */}
+          </button>
+        </div>
+
+        {isFetched && error && <p className="error-message">{error}</p>}
+        {isFetched && weather && <WeatherInfo weather={weather} />}
+      </div>
+    </ThemeProvider>
   );
 }
 

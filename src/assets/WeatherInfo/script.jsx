@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Sun, CloudRain, Cloud } from "lucide-react"; // icons
 import "./css/styles.css";
+import { ThemeContext, ThemeProvider } from "../themeProvider/theme";
 
 function WeatherInfo({ weather }) {
+  const { theme } = useContext(ThemeContext); // accesing the current theme
+
   const date = new Date().toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
@@ -21,7 +24,7 @@ function WeatherInfo({ weather }) {
   };
 
   return (
-    <div className="weather-info">
+    <div className={`weather-info ${theme}`}>
       <div className="weather-header">
         {/* weather icon  */}
         {getWeatherIcon(weather.weather[0].description.toLowerCase())} 

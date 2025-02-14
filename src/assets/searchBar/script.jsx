@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import './css/styles.css'
+import { ThemeContext } from "../themeProvider/theme";
+import { Search } from "lucide-react";
 
 const SearchBar = ({ city, setCity, liveSearch, filteredCities, setFilteredCities, fetchWeather }) => {
+  const theme = useContext(ThemeContext);
+
   const selectedCity = (selected) => {
     setCity(selected);
     fetchWeather();
@@ -9,7 +13,7 @@ const SearchBar = ({ city, setCity, liveSearch, filteredCities, setFilteredCitie
   };
 
   return (
-    <div className="container">
+    <div className={`container ${theme}`}>
       <input
         type="text"
         value={city}
