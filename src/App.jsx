@@ -83,7 +83,7 @@ function App() {
     setFilteredCities(matches);
   }
 
-  const theme = localStorage.getItem('theme');
+  // const theme = localStorage.getItem('theme');
 
   return (
     // wrapping the entire app within themeProvider making it accessible to the entire app
@@ -105,10 +105,7 @@ function App() {
             setFilteredCities([]); // clearing suggestion's list after selecting a city
           }}>
 
-            <Search size={20} color={theme.theme === "dark" ? "white" : "black"} />
-
-            {/* <Search size={20} /> */}
-            {/* <Search size={20} /> Adjust size as needed */}
+            <Search size={20} />
           </button>
         </div>
 

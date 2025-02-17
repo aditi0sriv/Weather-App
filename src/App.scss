@@ -4,17 +4,28 @@
     .search {
         // border: solid;
         display: flex;
+        // width: 20rem;
 
         input {
             padding: 0.5rem;
             // margin-right: 0.5rem;
             border: none;
             border-bottom: solid;
+            margin-right: 1rem;
+
         }
 
         button {
-            background: none;
-            border: none;
+            background: white;
+            border: solid;
+            border-radius: 1rem;
+            padding: 0.4rem;
+            width: 2.5rem;
+            margin-top: -0.3rem;
+
+            .search-icon {
+                border-radius: 0.5rem;
+            }
         }
     }
 }
