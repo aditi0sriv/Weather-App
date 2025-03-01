@@ -6,10 +6,10 @@ export const ThemeContext = createContext(); // creating theme context, to store
 export function ThemeProvider ({ children }) { // theme provider component
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
-    // Update localStorage whenever theme changes
+    // updating localStorage whenever theme changes
     useEffect(() => {
         localStorage.setItem("theme", theme);
-        document.body.className = theme; // Apply theme to body
+        document.body.className = theme; // applying them
     }, [theme]);
 
     const toggleTheme = () => {

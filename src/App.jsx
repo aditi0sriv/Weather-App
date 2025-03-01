@@ -1,6 +1,6 @@
 // Importing all the components, styles and api calls 
 import React, { useState } from 'react';
-import './App.css';
+import '../src/app css/App.css';
 import SearchBar from './assets/searchBar/script.jsx';
 import WelcomeMessage from './assets/searchBar copy/script.jsx';
 import WeatherInfo from './assets/WeatherInfo/script.jsx';
@@ -62,7 +62,7 @@ function App() {
       setWeather(null);
     }
     setIsFetched(true); // doesn't matter if the request is successful or not
-    // the request had been made through happened so, setIsfetched is set to true
+    // the request had been made through happened, so setIsfetched is set to true
   };
 
   // live search
@@ -82,8 +82,6 @@ function App() {
 
     setFilteredCities(matches);
   }
-
-  // const theme = localStorage.getItem('theme');
 
   return (
     // wrapping the entire app within themeProvider making it accessible to the entire app

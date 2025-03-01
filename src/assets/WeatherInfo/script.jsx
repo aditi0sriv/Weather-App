@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Sun, CloudRain, Cloud } from "lucide-react"; // icons
+import { Sun, CloudRain, Cloud } from "lucide-react"; // cute icons here
 import "./css/styles.css";
 import { ThemeContext, ThemeProvider } from "../themeProvider/theme";
 
